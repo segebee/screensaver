@@ -4,61 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>No Signal</title>
+    <title>ScreenSaver</title>
 
-    <style>
-    body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        font-family: verdana;
-    }
-    .container {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-    }
-    .screensaver {
-        height: 100vh;
-        width: 100%;
-        background-color: blue;
-        z-index: 2;
-        position: absolute;
-        top:0;
-        left:0;
-        flex:1;
-        opacity: 0;
-        transition: opacity .4s linear;
-    }
-    .nosignal {
-        height: 70px;
-        width: 200px;
-        background: rgb(3, 3, 129);
-        border: 3px solid white;
-        color: #fff;
-        padding: 15px;
-        position: absolute;
-        margin: auto;
-        top: 0;
-        bottom: 0;
-        left:0;
-        right: 0;
-        font-size: 25px;
-        box-sizing: border-box;
-        transition: transform 5s ease-in-out,top 5s,left 5s;
-    }
-    .text{
-        text-align: center
-    }
-
-    .info {
-        z-index: 1;
-        margin-top:15em;
-        justify-self: center;
-        
-        
-    }
-    </style>
+    <link href="screensaver.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -73,16 +21,14 @@
                 Currently idle for <span id="counter">0</span> second(s)
             </p>
         </div>
-        <div class="screensaver">
-            <div class="nosignal">
-                <div class="text">NO SIGNAL</div>
-            </div>
-        </div>
 
     </div>
 
     
 
-    <script src="app.js"></script>
+    <script src="screensaver.js"></script>
+    <script>
+        screenSaverInit();
+    </script>
 </body>
 </html>
