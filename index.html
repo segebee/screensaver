@@ -28,7 +28,7 @@
         left:0;
         flex:1;
         opacity: 0;
-        transition: opacity .5s linear;
+        transition: opacity .4s linear;
     }
     .nosignal {
         height: 70px;
@@ -45,7 +45,7 @@
         right: 0;
         font-size: 25px;
         box-sizing: border-box;
-        transition: top 5s linear,left 5s linear;
+        transition: transform 5s ease-in-out,top 5s,left 5s;
     }
     .text{
         text-align: center
@@ -53,8 +53,7 @@
 
     .info {
         z-index: 1;
-        
-        //align-items: center;
+        margin-top:15em;
         justify-self: center;
         
         
@@ -84,84 +83,6 @@
 
     
 
-    <script>
-        //move the no signal box on intervals
-        let interval = 2000, idleLimit = 5000, idleCount = 0
-        let screensaver = document.querySelector('.screensaver'), nosignal = document.querySelector('.nosignal')
-        let min = 10, maxHeight = 100 - (min*2), maxWidth = 100 - (min*2)
-        let idleTimer,timer,randomY,randomX;
-        
-
-        // DOM Events - run functions when events occur
-        window.onload = stopIdleCounter;
-        document.onmousemove = stopIdleCounter;
-        document.onmousedown = stopIdleCounter;
-        document.ontouchstart = stopIdleCounter;
-        document.onclick = stopIdleCounter;
-        document.onscroll = stopIdleCounter;
-        document.onkeypress = stopIdleCounter;
-
-        //console.log(idleCount)
-        //if no activity after specified time, run screensaver
-        function activateScreenSaver() {
-            if (idleCount === idleLimit) 
-            {
-                //enable screensaver
-                screensaver.style.opacity= '1'
-                timer = setInterval(startScreenSaver,interval)
-            }
-        }
-
-        function runIdleCounter() 
-        {
-            idleTimer = setInterval(idleCounter,1000)
-        }
-        function idleCounter() 
-        {
-            idleCount += 1000; 
-            //show user how long idle for
-            document.getElementById('counter').innerHTML = idleCount/1000;
-            //run screensaver
-            activateScreenSaver();
-            //console.log(idleCount)
-        }
-        function stopIdleCounter() 
-        {
-            idleCount=0
-            clearInterval(idleTimer)
-            removeScreenSaver()
-            runIdleCounter()
-        }
-
-        //clear timer if activity resumes
-        function removeScreenSaver() {
-            screensaver.style.opacity= '0'
-            clearInterval(timer)
-        }
-
-        function startScreenSaver() {
-            //run repeatedly
-            
-
-            randomY = Math.floor( Math.random() * ( document.body.offsetHeight - nosignal.offsetHeight ) ) + 1
-            randomX = Math.floor( Math.random() * ( document.body.offsetWidth - nosignal.offsetWidth ) ) + 1
-
-           
-            console.log('x: ',randomX)
-            console.log('y: ',randomY)
-
-            //nosignal.style.transform = 'translate('+randomX+'px,'+randomY+'px)'
-            nosignal.style.top = randomY+'px'
-            nosignal.style.left = randomX+'px'
-            nosignal.style.margin = 0
-
-        }
-
-        
-
-        
-
-        
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
