@@ -13,7 +13,7 @@
             this.elementName = this.validateField(options.elementName) ? options.elementName : '.screensaver'
             this.element = document.querySelector(this.elementName)
             
-            this.interval = this.validateField(options.interval) ? parseInt(options.interval) : 1000
+            this.interval = this.validateField(options.interval) ? parseInt(options.interval) : 500
             this.idleLimit = this.validateField(options.idleLimit) ? parseInt(options.idleLimit) : 5000
             this.idleCount = this.validateField(options.idleCount) ? parseInt(options.idleCount) : 0
             this.velocity = this.validateField(options.velocity) ? parseInt(options.velocity) : 10

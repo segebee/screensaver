@@ -19,7 +19,7 @@ The function can take in the following options as a json object, where no option
 {
     containerName : '.container', //the container where the screensaver will be embedded into, usually a div child of the body element
     elementName : '.screensaver', //name of the screensaver element
-    interval : 1000, //speed at which the screensaver animation is run in milliseconds
+    interval : 500, //speed at which the screensaver animation is run in milliseconds
     idleLimit : 5000, //user idle time to wait before activating screensaver
     idleCount  : 0, //idleTime start count
     velocity : 10, //speed at which screensaver child object moves

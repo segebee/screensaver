@@ -31,13 +31,13 @@ body {
     padding: 15px;
     position: absolute;
     margin: auto;
-    /* top: 0;
+    top: 0;
     bottom: 0;
     left:0;
-    right: 0; */
+    right: 0;
     font-size: 25px;
     box-sizing: border-box;
-    transition: transform 5s ease-in-out;
+    transition: transform 5s linear;
 }
 .text{
     text-align: center
