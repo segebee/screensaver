@@ -14,6 +14,7 @@ screenSaverInit();
 
 The function can take in the following options as a json object, where no option is specified, the default below is used
 
+```javascript
 
 {
     containerName : '.container', //the container where the screensaver will be embedded into, usually a div child of the body element
@@ -25,3 +26,4 @@ The function can take in the following options as a json object, where no option
     x : 0, // x position of screensaver child object
     y : 0 // y position of screensaver child object
 }
+```
